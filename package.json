@@ -5,5 +5,16 @@
   "main": "index.js",
   "repository": "git@github.com:domotz/react-multi-window.git",
   "author": "Domotz <dev@domotz.com>, Alessandro Pagiaro <a.pagiaro@domotz.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  }
 }
