@@ -68,7 +68,7 @@ export default function NewWindow ({
     ]);
 
     const contextValue = useMemo(() => ({
-        document: externalWindow.document,
+        document: externalWindow?.document,
         window: externalWindow,
         isOpen: !!externalWindow,
     }), [
