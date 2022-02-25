@@ -1,8 +1,8 @@
 {
   "name": "react-multi-window",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Split React Application in Multiple Windows, in a effective way",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/domotz/react-multi-window",
   "author": "Domotz <dev@domotz.com>, Alessandro Pagiaro <a.pagiaro@domotz.com>",
   "license": "MIT",
