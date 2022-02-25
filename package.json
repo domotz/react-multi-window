@@ -7,14 +7,22 @@
   "author": "Domotz <dev@domotz.com>, Alessandro Pagiaro <a.pagiaro@domotz.com>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb": "19.0.4",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "babel": "^6.23.0",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.68.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "build": "rm -rf dist/; rollup -c rollup.config.js"
   }
 }
