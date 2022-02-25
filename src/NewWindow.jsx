@@ -6,7 +6,7 @@ import {
 } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { copyResources } from './copyStyle';
+import { copyResources } from './copyResources';
 import { NewWindowContext } from './hooks';
 
 export default function NewWindow ({
@@ -14,6 +14,7 @@ export default function NewWindow ({
     onUnload, 
     placeHolder,
     title,
+    copyStyleAndScripts=true,
 }) {
     const [dest, setDest] = useState();
     const [externalWindow, setExternalWindow] = useState(null);
@@ -48,9 +49,14 @@ export default function NewWindow ({
         externalWindow.document.body.appendChild(containerEl);
         externalWindow.document.body.style.position='absolute';
         setDest(containerEl);
-        setTimeout(() => {
-            copyResources(document, externalWindow.document);
-        });
+
+        if(copyStyleAndScripts){
+            // run it async because otherwise the rendering is blocked and some issue in placement of HTML tag can happens
+            setTimeout(() => {
+                copyResources(document, externalWindow.document);
+            });
+        }
+        
 
         return () => {
             externalWindow.close();
