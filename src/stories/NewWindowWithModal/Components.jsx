@@ -1,19 +1,9 @@
 import React, {useState} from 'react';
 
-import NewWindow from '../index'
+import NewWindow from '../../index'
 import {Modal} from 'react-overlays';
-import { useDocument } from '../hooks';
+import { useDocument } from '../../hooks';
 import './style.css';
-
-export default {
-  title: 'NewWindowWithModal',
-  component: NewWindow,
-  parameters: {
-    layout: 'fullscreen',
-  },
-};
-
-let rand = () => Math.floor(Math.random() * 20) - 10;
 
 const Backdrop = (props) => <div {...props} className='backdrop'/>
 

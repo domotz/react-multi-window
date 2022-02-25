@@ -1,0 +1,22 @@
+import {DetachableContentWithModal} from './Components.jsx';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import {NewWindow} from '../../index';
+
+<Meta title="NewWindowWithModal" component={NewWindow} />
+
+Opening modals in External Windows can be tricky because the modal, to be rendered as we expect,
+needs to know the document in which it must render itself. This can be a problem in our context
+because the React computation to render element is done in the main window and only the render
+knows that a particular element must be render in another window (using `React.createPortal`).
+
+So to resolve that problem we created an hook, `useDocument()` that always returns the real document
+in which the component lives at the moment (i.e. main or detached window).
+
+The example below shows how it can be used with `React-Overlay`, that is the library behind `React-Bootstrap`
+but same approach can be used on every library passing the container of the modal, usually set to `document.body`.
+
+<Canvas>
+  <Story name="DetachableContentWithModal">
+    <DetachableContentWithModal/>
+  </Story>
+</Canvas>
