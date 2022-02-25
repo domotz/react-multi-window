@@ -93,14 +93,31 @@ export default function NewWindow ({
 }
 
 NewWindow.propTypes = {
+    /**
+     * Element that will be shown in the window
+     */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
-    ]),
+    ]).isRequired,
+    /**
+     * Function invoked when the child window is closed
+     */
     onUnload: PropTypes.func,
+    /**
+     * Content to show where the previous content was shown. It can be any JSX content (for instance, a button to re-attach the 
+     * external window)
+     */
     placeholder: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]),
+    /**
+     * Title of the external window
+     */
     title: PropTypes.string,
+    /**
+     * Setting to false to disable the copy of the stylesheets and the scripts in the new page. The detached content may stop to work.
+     */
+    copyStyleAndScripts: PropTypes.bool,
 }
