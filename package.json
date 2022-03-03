@@ -34,7 +34,7 @@
   "scripts": {
     "build": "rm -rf dist/; rollup -c rollup.config.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "dependencies": {}
 }
